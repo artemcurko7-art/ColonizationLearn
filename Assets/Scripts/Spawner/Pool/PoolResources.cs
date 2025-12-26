@@ -4,7 +4,7 @@ using UnityEngine.Pool;
 
 public class PoolResources : MonoBehaviour
 {
-    [SerializeField] private Resource _resours;
+    [SerializeField] private Resource _resourse;
     [SerializeField] private Transform _spawnPoint;
 
     private ObjectPool<Resource> _pool;
@@ -13,7 +13,7 @@ public class PoolResources : MonoBehaviour
     private void Awake()
     {
         _pool = new ObjectPool<Resource>(
-            createFunc: () => Instantiate(_resours),
+            createFunc: () => Instantiate(_resourse),
             actionOnGet: (resource) => ActionOnGet(resource),
             actionOnRelease: (resource) => ActionOnRelease(resource));
     }
